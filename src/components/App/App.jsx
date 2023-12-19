@@ -17,7 +17,7 @@ export const App = () => {
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contactsssss]);
+  }, [contacts]);
 
   const handleChangeFilter = e => {
     setFilter(e.target.value);
@@ -36,7 +36,6 @@ export const App = () => {
     } else {
       const newContact = { id: nanoid(), ...contactData };
       setContacts(prev => [newContact, ...prev]);
-      setPrevContacts(contacts);
     }
   };
 
