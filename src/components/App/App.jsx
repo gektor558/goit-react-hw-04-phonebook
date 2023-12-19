@@ -14,13 +14,10 @@ export const App = () => {
   );
 
   const [filter, setFilter] = useState('');
-  const [prevContacts, setPrevContacts] = useState([]);
 
   useEffect(() => {
-    if (prevContacts !== contacts) {
-      window.localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }, [prevContacts, contacts]);
+    window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleChangeFilter = e => {
     setFilter(e.target.value);
